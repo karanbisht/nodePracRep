@@ -1,15 +1,23 @@
 'use strict';
-
 angular.module('nodeYoamanApp', [
-  'nodeYoamanApp.constants',
   'ngCookies',
   'ngResource',
-  'ngSanitize',
+  'ngSanitize', 
   'ui.router'
 ])
-  .config(function($urlRouterProvider, $locationProvider) {
+  .config(function($stateProvider,$urlRouterProvider, $locationProvider) {
     $urlRouterProvider
-      .otherwise('/');
+      .otherwise('/login'); 
+
+    $stateProvider.state("login",{
+      "url":'/login',
+      "templateUrl" : "/app/login/login.html",
+      "controller":"loginCtrl"
+    }).state("home",{
+      "url":"/home",
+      "templateUrl":"/app/home/home.html",
+      "controller":"homeCtrl"
+    });  
 
     $locationProvider.html5Mode(true);
   });
