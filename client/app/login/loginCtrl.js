@@ -4,7 +4,6 @@ angular.module('nodeYoamanApp')
 
 	$scope.loginBtn = function(){
 		console.log("Login button clicked", $scope.login);
-
 		$http({"method":"post","url":'/api/user/login',data:$scope.login}).success(function(res){
 			console.log("res",res);
 			if(res.message==="Successfully Login"){
@@ -16,4 +15,10 @@ angular.module('nodeYoamanApp')
 			console.log("err",err);
 		})
 	}
+
+	$scope.moveToAddUserPage = function(){
+		console.log("click on addMore");
+		$location.path("/addUser");
+	}
+
 }]);
