@@ -20,13 +20,12 @@ module.exports.login = function(req,res){
 		}
  	if(obj){ 
 		if(data.password === obj.password){
-			return res.json({"status":"success","message":"Successfully Login"});
+			return res.json({"status":"success","message":"Successfully Login","data":obj});
 		}else{
 			return res.json({"status":"success","message":"Invalid password"});
 		}
 	}else{
 		return res.json({"status":"success","message":"Invalid User"});	
 	}
-
   })	
 }

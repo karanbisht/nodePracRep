@@ -12,6 +12,8 @@ export default function(app) {
   app.use('/api/things', require('./api/thing'));
   app.use('/api/user',require('./api/user'));
   app.use('/api/product',require('./api/product'));
+  app.use('/api/transaction',require('./api/transaction'));
+
 
   // All undefined asset or api routes should return a 404
   app.route('/:url(api|auth|components|app|bower_components|assets)/*')

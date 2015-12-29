@@ -6,8 +6,10 @@ angular.module('nodeYoamanApp')
 		console.log("Login button clicked", $scope.login);
 		$http({"method":"post","url":'/api/user/login',data:$scope.login}).success(function(res){
 			console.log("res",res);
+			console.log(res.data._id);
 			if(res.message==="Successfully Login"){
-				$location.path("/home");
+				$location.path("/home/"+res.data._id);
+				//window.location.href = '/home/'+res.data._id;
 			}else{
 				alert(res.message);
 			}
@@ -20,5 +22,4 @@ angular.module('nodeYoamanApp')
 		console.log("click on addMore");
 		$location.path("/addUser");
 	}
-
 }]);
