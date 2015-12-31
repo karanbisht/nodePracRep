@@ -22,6 +22,7 @@ angular.module('nodeYoamanApp')
 	});	
 
 	$scope.checkout = function(checkData){
+		console.log(checkData);
 		$http({"method":"POST","url":'/api/transaction/checkout',data:checkData}).success(function(res){			
 			console.log("success");
 			console.log(res.status);

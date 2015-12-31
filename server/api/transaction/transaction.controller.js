@@ -33,6 +33,7 @@ module.exports.get = function(req,res){
 }
 
 module.exports.checkout =function(req,res){
+
 	Transaction.update({'userId':req.body.userId,'id':req.body.id},{'isCheckedOut':true,'date':new Date()},function(err,docs){
 		if(err){
 			return res.json({status:500,data:err});

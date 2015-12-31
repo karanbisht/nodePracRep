@@ -18,9 +18,9 @@
         <th>Price</th>
         <th>Date</th>
       </thead>
-      <tr ng-repeat="prd in hist.checkedOutProducts track by $index">
-        <td>{{prd.name}}</td>
-        <td>{{prd.price}}</td>
+      <tr ng-repeat="prd in checkedOutProducts track by $index">
+        <td>{{prd.productName}}</td>
+        <td>{{prd.Price}}</td>
         <td>{{prd.date}}</td>
       </tr>
     </table>
