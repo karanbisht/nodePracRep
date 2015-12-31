@@ -25,6 +25,10 @@ angular.module('nodeYoamanApp', [
       "url":"/checkout/:id",
       "templateUrl":"/app/checkout/checkout.html",
       "controller":"checkoutCtrl"
+    }).state("history",{
+      "url":"/history/:id",
+      "templateUrl":"/app/history/history.html",
+      "controller":"historyCtrl" 
     });  
 
     $locationProvider.html5Mode(true);

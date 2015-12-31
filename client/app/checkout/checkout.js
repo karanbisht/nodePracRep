@@ -22,10 +22,32 @@ angular.module('nodeYoamanApp')
 	});	
 
 	$scope.checkout = function(checkData){
+		$http({"method":"POST","url":'/api/transaction/checkout',data:checkData}).success(function(res){			
+			console.log("success");
+			console.log(res.status);
+			if(res.status===200){
+				var index = $scope.checkOutArray.indexOf(checkData);
+     			$scope.checkOutArray.splice(index,1);
+			}else{
+			}			
+		}).error(function(err){
+			console.log("err",err);
+		});
 
 	}
 
+
 	$scope.remove = function(removeData){
-		
+			$http({"method":"POST","url":'/api/transaction/deleteProd',data:removeData}).success(function(res){			
+			console.log("success");
+			console.log(res.status);
+			if(res.status===200){
+				var index = $scope.checkOutArray.indexOf(removeData);
+     			$scope.checkOutArray.splice(index,1);
+			}else{
+			}			
+		}).error(function(err){
+			console.log("err",err);
+		});
 	}
 }]);
